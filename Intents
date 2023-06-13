@@ -1,0 +1,7 @@
+Intents
+
+- a messaging object you can use to request an action from another app component.
+although intents facilate communication between components in several parts
+- intent stores data and then starts a new activity with that intent.
+
+from within the new activity we can access the data that was stored in the intent.
