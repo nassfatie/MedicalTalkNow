@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+<title> {{ title }} </title>
+{% endblock %}
+{% block content %}
+<div class="login">
+    <div class="wrapper">
+        <h3 class="login_title">Register Here</h3>
+        <form  action="{{ url_for('auth.signup') }}" method="post">
+            <fieldset>
+                <div>
+                    <label class="label_name" for="">Username </label>
+                    <input class="input_field" type="text" name="username">
+                </div>
+                <div>
+                    <label class="label_name" for="">Email </label>
+                    <input class="input_field" type="email" name="email">
+                </div>
+                <div>
+                    <label class="label_name" for="">Password </label>
+                    <input class="input_field" type="password" name="password" >
+                </div>
+            </fieldset>
+            <div>
+                <input class="submit" type="submit" value="signup">
+            </div>
+        </form>
+        <small>
+            Already Have An Account? <a class="btn" href="{{ url_for('auth.login') }}">Login</a>
+        </small>
+    </div>
+</div>
+{% endblock content %}

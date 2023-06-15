@@ -1,0 +1,28 @@
+{% extends 'dashboard/dashbase.html' %}
+{% block title %}
+<title> {{ title }} </title>
+{% endblock %}
+{% block dashboard %}
+
+<div class="header_content">
+    <div class="header_title">
+        <h2>Doctor's Room</h2>
+    </div>
+</div>
+<div class="main_wrapper">
+    <section class="room">
+        <button class="chat_button">New Chat</button>
+        <div class="history"></div>
+    </section>
+    <section class="chat_area">
+        <h1>Dr. Richie</h1>
+        <p id="output"></p>
+        <div class="bottom_section">
+            <div class="input_container">
+                <input type="text">
+                <div id="submit">&#62;</div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock dashboard %}
