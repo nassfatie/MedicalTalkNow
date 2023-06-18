@@ -3,6 +3,7 @@ from flask import render_template, request, redirect, url_for, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from drRichie.extras.models import User
 from drRichie.extras.extensions import db
+from datetime import datetime
 from flask_login import login_user, logout_user, login_required
 
 
@@ -15,6 +16,14 @@ def register():
 
 @auth.route('/signup', methods=['POST'])
 def signup():
+    fname = request.form.get('first_name')
+    lname = request.form.get('last_name')
+    gender = request.form.get('gender')
+    birth_data = request.form.get('birth_data')
+    date = datetime.strptime(birth_data, '%Y-%m-%d')
+    city = request.form.get('city')
+    height = request.form.get('height')
+    weight = request.form.get('weight')
     username = request.form.get('username')
     email = request.form.get('email')
     password = request.form.get('password')
@@ -24,7 +33,7 @@ def signup():
         flash('User with that email already exists.')
         return redirect(url_for('auth.signup'))
     else:
-        new_user = User(username = username, email = email, hashed_password = generate_password_hash(password, method='sha256'))
+        new_user = User(first_name=fname, last_name= lname, gender=gender, birth_data=date, city=city, height=height, weight=weight, username = username, email = email, hashed_password = generate_password_hash(password, method='sha256'))
         db.session.add(new_user)
         db.session.commit()
         return redirect(url_for('auth.sign_in'))

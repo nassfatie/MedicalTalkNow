@@ -4,12 +4,32 @@
 {% endblock %}
 {% block content %}
 <div class="login">
-    <div class="wrapper">
+    <div class="wrapper_register">
         <h3 class="login_title">Register Here</h3>
-        <form  action="{{ url_for('auth.signup') }}" method="post">
+        <form action="{{ url_for('auth.signup') }}" method="post">
             <fieldset>
                 <div>
-                    <label class="label_name" for="">Username </label>
+                    <label class="label_name" for="">First Name </label>
+                    <input class="input_field" type="text" name="first_name">
+                </div>
+                <div>
+                    <label class="label_name" for="">Last Name </label>
+                    <input class="input_field" type="text" name="last_name">
+                </div>
+                <div>
+                    <label class="label_name" for="">City </label>
+                    <input class="input_field" type="text" name="city">
+                </div>
+                <div>
+                    <label class="label_name" for="">Height </label>
+                    <input class="input_field" type="number" name="height">
+                </div>
+                <div>
+                    <label class="label_name" for="">Weight </label>
+                    <input class="input_field" type="number" name="weight">
+                </div>
+                <div>
+                    <label class="label_name" for="">UserName </label>
                     <input class="input_field" type="text" name="username">
                 </div>
                 <div>
@@ -18,14 +38,22 @@
                 </div>
                 <div>
                     <label class="label_name" for="">Password </label>
-                    <input class="input_field" type="password" name="password" >
+                    <input class="input_field" type="password" name="password">
+                </div>
+                <div>
+                    <label class="label_name" for="">Birth Date </label>
+                    <input class="input_field" type="date" name="birth_data">
+                </div>
+                <div>
+                    <label class="label_name" for="">Gender </label>
+                    <input class="input_field" placeholder="male, female or others" type="text" name="gender">
                 </div>
             </fieldset>
             <div>
-                <input class="submit" type="submit" value="signup">
+                <input class="register" type="submit" value="signup">
             </div>
         </form>
-        <small>
+        <small class="account">
             Already Have An Account? <a class="btn" href="{{ url_for('auth.login') }}">Login</a>
         </small>
     </div>

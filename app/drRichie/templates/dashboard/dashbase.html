@@ -7,8 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dash.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/room.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -16,15 +21,9 @@
         <div class="logo"></div>
         <ul class="menu_list">
             <li class="active_tab">
-                <a href="{{ url_for('dash.dashboard') }}" >
+                <a href="{{ url_for('dash.dashboard') }}">
                     <i class="fa fa-tachometer"></i>
                     <span>Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url_for('dash.profile') }}">
-                    <i class="fa fa-user"></i>
-                    <span>Profile</span>
                 </a>
             </li>
             <li>
@@ -43,8 +42,12 @@
     </div>
     <div class="content_area">
         {% block dashboard %}
+
         {% endblock dashboard %}
     </div>
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
+
 </html>
