@@ -21,8 +21,6 @@ def edit():
 @dash.route('/update/<int:user_id>', methods=['GET','POST'])
 @login_required
 def update(user_id):
-    """This will display user details"""
- 
     if request.method == "POST":
         user = User.query.filter_by(id=user_id).first()
         if user:
