@@ -9,7 +9,7 @@ Dr. Richie is a virtual doctor you can carry around with you in your palm or lap
 ## Getting Started
 The repository is categorized into 2, the backend ([server](./server/)) and the frontend ([client](./client/)). To set up the project, clone the repo
 ```sh
-git clone https://github.com/standardforever/klinik.git
+git clone https://github.com/nassfatie/MedicalTalkNow.git
 ```
 Once done, you'll need to setup the server and the client to use the app.
 
